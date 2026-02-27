@@ -3,19 +3,13 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            name: "Ahmed",
-            age: 20,
-            email: "ahmed@gmail.com",
-            link: "https://www.google.com",
+            number: 0
         };
     },
     methods: {
-        sayHi(time, name) {
-            return "Good " + time + ", " + name;
-        },
-        // sayTest: function () {
-
-        // }
+        testFunction() {
+            this.number++;
+        }
     }
 }).mount("#app-root");
 
