@@ -12,7 +12,12 @@
     <div id="app-root">
         <h2>Number is {{number}}
         </h2>
-        <button v-on:click="testFunction">click me</button>
+        <button @click="testFunction">click me</button>
+        <a href="https://www.google.com/" @click.prevent>click link</a>
+        <a href="https://www.google.com/" @click.once="testMe">clicklink</a>
+        <a href="#" @click.once="testMe">clicklink</a>
+        <!-- <a action="" @submit.prevent>click link</a> -->
+
     </div>
 
 
