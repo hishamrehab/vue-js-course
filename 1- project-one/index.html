@@ -4,18 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
     <title>Learn Vue.js</title>
 </head>
+
 
 <body>
 
     <div id="app-root">
-        <h2>Number one is: {{numberOne}}</h2>
-        <h2>Numner one * 2 ={{numOneChange}}</h2>
-        <button @click="numberOne++">Number one change </button>
-        <h2>Number two is: {{numberTwo}}</h2>
-        <h2>Numner two + 10 ={{numTwoChange}}</h2>
-        <button @click="numberTwo++">Number two change </button>
+        <h2 :id="myColor" :class="myColor">My Title</h2>
+        <input type="text" v-model="myColor"/>
+
+
+        <h3 :style="color:red; font-size: 20px;">My style bibding</h3>
+        <h3 :style="`color:${myColor}`">My style bibding</h3>
+        <h3 :style="`font-size:${myFont}px`">My style bibding</h3>
+        <input type="number" name="" id="" v-model="myFont" />
+
     </div>
 
 

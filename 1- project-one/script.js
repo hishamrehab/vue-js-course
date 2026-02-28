@@ -3,9 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            numberOne: 0,
-            numberTwo: 0,
-            inputValue: ""
+         myFont: 12
         };
     },
     methods: {
