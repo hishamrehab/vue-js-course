@@ -10,16 +10,17 @@
 <body>
 
     <div id="app-root">
-        <label for="textInp">{{name}}</label>
-        <input type="text" v-model="name" name="textInp" id="textInp" />
+        <form action="" @submit.prevent="sendData">
+            <label for="username">Enter your name</label>
+            <input type="text" v-model="newUser.name" name="username">
+            <label for="email">Enter your email</label>
+            <input type="email" v-model="newUser.email" name="email" />
 
-        <label for="textInp_2">{{city}}</label>
-        <input type="text" name="textInp_2" id="textInp_2" />
-        <button @click="name = 'mohamed'">click</button>
-
+            <label for="password">Enter your password</label>
+            <input type="password" name="newUser.password" v-model="password" />
+            <input type="submit" />
+        </form>
     </div>
-
-
 
 
 

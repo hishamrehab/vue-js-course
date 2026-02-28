@@ -3,22 +3,23 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            name: "Ahmed",
-            city: "Cairo"
+            isActive: false,
+            age: 29,
+            newUser: {
+                name: "",
+                email: "",
+                password: "",
+            },
+            myArr: [
+                { name: "ahmed", age: 200 },
+                { name: "yasser", age: 25 }
+            ],
+
         };
     },
     methods: {
-        testFunction() {
-            this.number++;
-        },
-        testMe() {
-            console.log("test once");
-        },
-        printMyName() {
-            console.log("ahmed");
-        },
-        updateValue() {
-            this.name = document.getElementById("textInp").value;
+        sendData() {
+            console.log(this.newUser);
         }
     },
 }).mount("#app-root");
