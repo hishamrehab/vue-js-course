@@ -1,30 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Learn Vue.js</title>
+    <title>
+        Learn
+        Vue.js
+    </title>
 </head>
 
-
 <body>
-
     <div id="app-root">
-       <h3>His name is{{name}} , His age is {{age}}</h2>         
-        <p v-if="age < 30">His age is yanger than 30</p>
-        <p v-else-if="age == 30">His age is equal to 30 </p>
-        <p v-else="age == 30">His age is equal to 30 </p>
-
-
-            <p v-show="age < 30">His age is yanger than 30</p>
-            <p v-show="age == 30">His age is equal to 30 </p>
-            <p v-show="age > 30">His age is equal to 30 </p>
-      <button @click="age++">increase age</button>
+        <h2 v-for="person  in students" :key="person.id">
+            <span>Student
+                name
+                is
+                {{person.name}}</span>
+            <span>Student
+                name
+                is
+                {{person.age}}</span>
+            <span>Student
+                name
+                is
+                {{person.id}}</span>
+        </h2>
     </div>
-
-
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./script.js"></script>
