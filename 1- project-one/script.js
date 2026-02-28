@@ -3,30 +3,45 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-         name : "Ahmed",
-         students: [
+           products: [
             {
-                name: "Ahmed",
-                id: 1, 
-                age: 15
+                title: "Lizerd Shoes",
+                descrption: "This is a very cool shoes with  a cool color",
+                price: "50$",
+                brand: "Adidass",
+                img: "./images/image1.png",
+                id: 1,
             },
-                {
-                name: "Salem",
-                id: 2, 
-                age: 16
-            },
-              {
-                name: "Ahmed",
-                id: 3, 
-                age: 17
+                 {
+                title: "Girl bag",
+                descrption: "This is a very cool girl bag with  a cool color",
+                price: "70$",
+                brand: "Nike",
+                img: "./images/image2.png",
+                id: 2,
             },
 
-                {
-                name: "Mohamed",
-                id: 4, 
-                age: 20
+                 {
+                title: "Lneovo labtop",
+                descrption: "This is a very cool labtop with  many tecnologies",
+                price: "800$",
+                brand: "Lenovo",
+               img: "./images/image3.png",
+                id: 3,
             },
-         ],
+
+
+                 {
+                title: "Apple Watch",
+                descrption: "This is a very cool Watch with  a cool color",
+                price: "500$",
+                brand: "Apple",
+               img: "./images/image4.png",
+                id: 4,
+            },
+
+
+           ]
         };
     }
 }).mount("#app-root");

@@ -13,20 +13,14 @@
 
 <body>
     <div id="app-root">
-        <h2 v-for="person  in students" :key="person.id">
-            <span>Student
-                name
-                is
-                {{person.name}}</span>
-            <span>Student
-                name
-                is
-                {{person.age}}</span>
-            <span>Student
-                name
-                is
-                {{person.id}}</span>
-        </h2>
+     <div class="container">
+        <div class="card" v-for="item in products" :key="item.id">
+        <img :src="item.img" alt=""/>
+        <p class="title">{{item.title}}</p>
+        <h3 class="brand">{{item.descrption}}</p>
+        
+        </div>
+     </div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
