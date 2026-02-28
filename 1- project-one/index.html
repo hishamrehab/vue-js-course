@@ -12,15 +12,16 @@
 <body>
 
     <div id="app-root">
-        <h2 :id="myColor" :class="myColor">My Title</h2>
-        <input type="text" v-model="myColor"/>
+       <h3>His name is{{name}} , His age is {{age}}</h2>         
+        <p v-if="age < 30">His age is yanger than 30</p>
+        <p v-else-if="age == 30">His age is equal to 30 </p>
+        <p v-else="age == 30">His age is equal to 30 </p>
 
 
-        <h3 :style="color:red; font-size: 20px;">My style bibding</h3>
-        <h3 :style="`color:${myColor}`">My style bibding</h3>
-        <h3 :style="`font-size:${myFont}px`">My style bibding</h3>
-        <input type="number" name="" id="" v-model="myFont" />
-
+            <p v-show="age < 30">His age is yanger than 30</p>
+            <p v-show="age == 30">His age is equal to 30 </p>
+            <p v-show="age > 30">His age is equal to 30 </p>
+      <button @click="age++">increase age</button>
     </div>
 
 
