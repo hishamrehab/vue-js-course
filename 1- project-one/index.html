@@ -10,16 +10,12 @@
 <body>
 
     <div id="app-root">
-        <form action="" @submit.prevent="sendData">
-            <label for="username">Enter your name</label>
-            <input type="text" v-model="newUser.name" name="username">
-            <label for="email">Enter your email</label>
-            <input type="email" v-model="newUser.email" name="email" />
-
-            <label for="password">Enter your password</label>
-            <input type="password" name="newUser.password" v-model="password" />
-            <input type="submit" />
-        </form>
+        <h2>Number one is: {{numberOne}}</h2>
+        <h2>Numner one * 2 ={{numOneChange}}</h2>
+        <button @click="numberOne++">Number one change </button>
+        <h2>Number two is: {{numberTwo}}</h2>
+        <h2>Numner two + 10 ={{numTwoChange}}</h2>
+        <button @click="numberTwo++">Number two change </button>
     </div>
 
 

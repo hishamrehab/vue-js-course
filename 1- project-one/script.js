@@ -3,25 +3,22 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            isActive: false,
-            age: 29,
-            newUser: {
-                name: "",
-                email: "",
-                password: "",
-            },
-            myArr: [
-                { name: "ahmed", age: 200 },
-                { name: "yasser", age: 25 }
-            ],
-
+            numberOne: 0,
+            numberTwo: 0,
+            inputValue: ""
         };
     },
     methods: {
-        sendData() {
-            console.log(this.newUser);
-        }
+
     },
+    computed: {
+        numOneChange() {
+            return this.numberOne * 2;
+        },
+        numTwoChange() {
+            return this.numberTwo + 10;
+        },
+    }
 }).mount("#app-root");
 
 
