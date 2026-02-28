@@ -3,7 +3,8 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            number: 0
+            name: "Ahmed",
+            city: "Cairo"
         };
     },
     methods: {
@@ -12,7 +13,14 @@ createApp({
         },
         testMe() {
             console.log("test once");
+        },
+        printMyName() {
+            console.log("ahmed");
+        },
+        updateValue() {
+            this.name = document.getElementById("textInp").value;
         }
-    }
+    },
 }).mount("#app-root");
+
 

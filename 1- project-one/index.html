@@ -10,15 +10,16 @@
 <body>
 
     <div id="app-root">
-        <h2>Number is {{number}}
-        </h2>
-        <button @click="testFunction">click me</button>
-        <a href="https://www.google.com/" @click.prevent>click link</a>
-        <a href="https://www.google.com/" @click.once="testMe">clicklink</a>
-        <a href="#" @click.once="testMe">clicklink</a>
-        <!-- <a action="" @submit.prevent>click link</a> -->
+        <label for="textInp">{{name}}</label>
+        <input type="text" v-model="name" name="textInp" id="textInp" />
+
+        <label for="textInp_2">{{city}}</label>
+        <input type="text" name="textInp_2" id="textInp_2" />
+        <button @click="name = 'mohamed'">click</button>
 
     </div>
+
+
 
 
 
