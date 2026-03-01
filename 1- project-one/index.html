@@ -12,13 +12,13 @@
 </head>
 
 <body>
-    <div id="app-root">
-       <input type="text" ref="myInput"/>
-       <h2 ref="myTitle">my age is {{age}}</h2>
-       <button @click="checkRefs">click</button>
+    <div id="app_root">
+        <my_component></my_component>
     </div>
 
-   
+    <div id="app_root_2">
+        <my_component></my_component>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./script.js"></script>
 </body>
