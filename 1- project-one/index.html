@@ -13,14 +13,28 @@
 
 <body>
     <div id="app-root">
+        <h2 style="text-align: center;">Products</h2>
+        {{name}}
      <div class="container">
         <div class="card" v-for="item in products" :key="item.id">
         <img :src="item.img" alt=""/>
         <p class="title">{{item.title}}</p>
-        <h3 class="brand">{{item.descrption}}</p>
-        
+        <h3 class="brand">{{item.descrption}}</h3>
+        <p class="brand">{{item.brand}}</p>
+         <div class="colors">
+               <span v-for="color in item.colors"  :style="`backgroud: ${color}`"></span>
+         </div> 
         </div>
-     </div>
+        <h2 class="text-align:center">{{age}}</h2>
+    </div>
+    </div>
+
+    <div id="app_root_2" class="students">
+        <h2 style="text-align: center;">Students</h2>
+      <h4 v-for="(name , i) in students":key="i">
+         {{name}}
+      </h4>
+      <button @click="increaseAge">click here</button>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

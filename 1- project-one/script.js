@@ -1,8 +1,10 @@
 const { createApp } = Vue;
 
-createApp({
+const vue_1 = createApp({
     data() {
         return {
+            name:"Ali",
+            age: 15,
            products: [
             {
                 title: "Lizerd Shoes",
@@ -10,6 +12,7 @@ createApp({
                 price: "50$",
                 brand: "Adidass",
                 img: "./images/image1.png",
+                colors: ["red" , "green" , "blue" , "yellow"],
                 id: 1,
             },
                  {
@@ -17,6 +20,7 @@ createApp({
                 descrption: "This is a very cool girl bag with  a cool color",
                 price: "70$",
                 brand: "Nike",
+                 colors: ["yellow" , "green" , "blue" , "yellow"],
                 img: "./images/image2.png",
                 id: 2,
             },
@@ -26,6 +30,7 @@ createApp({
                 descrption: "This is a very cool labtop with  many tecnologies",
                 price: "800$",
                 brand: "Lenovo",
+                 colors: ["red" , "green" , "blue" , "yellow"],
                img: "./images/image3.png",
                 id: 3,
             },
@@ -36,6 +41,7 @@ createApp({
                 descrption: "This is a very cool Watch with  a cool color",
                 price: "500$",
                 brand: "Apple",
+                 colors: ["red" , "green" , "blue" , "yellow"],
                img: "./images/image4.png",
                 id: 4,
             },
@@ -47,3 +53,17 @@ createApp({
 }).mount("#app-root");
 
 
+
+const vue2 = createApp({
+data() {
+    return {
+        name : "Ahmed",
+        students: ["Ahmed" , "Samir" , "Moiaz"]
+    };
+},
+    methods: {
+        increaseAge(){
+          vue_1.age++
+        }
+    }
+}).mount("#app_root_2");
