@@ -5,9 +5,9 @@
     <h1>
       This is  my main page
     </h1>
-  <MyContent :students="students" :isActive="isActive" />
+   <MyContent :students="students" @updateActive="changeActive($event)" :isActive="isActive" />
    <hr />
-     <MyContent :students="students" :isActive="isActive" />
+     <MyContent :students="students" :isActive="isActive" @updateActive="changeActive($event)" />
   </div>
 </template>
 
@@ -24,6 +24,11 @@ import MyContent from '@/components/MyContent.vue';
     return  {
        students: ["Ahmed" , "Mohamed" , "Mostafa"],
        isActive : true
+    }
+  },
+  methods: {
+    changeActive(data) {
+      this.isActive = data
     }
   }
  }
