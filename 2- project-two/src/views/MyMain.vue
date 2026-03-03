@@ -2,11 +2,12 @@
   <div
     class="my-main"
   >
-
     <h1>
       This is  my main page
     </h1>
-  <MyContent :students="students"/>
+  <MyContent :students="students" :isActive="isActive" />
+   <hr />
+     <MyContent :students="students" :isActive="isActive" />
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import MyContent from '@/components/MyContent.vue';
   data() {
     return  {
        students: ["Ahmed" , "Mohamed" , "Mostafa"],
+       isActive : true
     }
   }
  }
