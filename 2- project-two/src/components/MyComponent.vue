@@ -1,7 +1,7 @@
 <template>
     <div class="parent">
-        <!-- <slot name="slotTitle"></slot>
         <h2>This is slot compoent , my name is {{ name }}</h2>
+        <!-- <slot name="slotTitle"></slot>
         <slot name="slotText"></slot> -->
         <form action="">
           <slot name="slotHeader"></slot>

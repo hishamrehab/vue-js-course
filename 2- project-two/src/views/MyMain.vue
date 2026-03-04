@@ -5,41 +5,69 @@
     <h1>
       This is  my main page
     </h1>
-   <my-comp :name="name">
-      <template #slotHeader>
-         <h3>This is slot header</h3>
+   <keep-alive>
+        <my-comp :name="name" v-if="isCompTwo">
+        <template #slotHeader>
+          <h3>This is slot header one</h3>
+        </template>
+      <template  #slotInputs>
+      <div>
+        <input type="text" placeholder="Enter your name"/>
+        <input type="password" placeholder="Enter your password"/>
+      </div>
       </template>
-     <template  #slotInputs>
-     <div>
-      <input type="text" placeholder="Enter your name"/>
-      <input type="password" placeholder="Enter your password"/>
-     </div>
-     </template>
-          <template  #slotActions>
-     <div>
-      <input type="submit" value="submit"/>
+            <template  #slotActions>
+      <div>
+        <input type="submit" value="submit"/>
 
-     </div>
-     </template>
-   </my-comp>
+      </div>
+      </template>
+    </my-comp>
+   </keep-alive>
     </div>
-
-</template>
+     
+    <div>
+    <keep-alive>
+    <mycomp-two name="Mohamed" v-if="isCompTwo">
+            <template #slotHeader>
+            <h3>This is slot heade two</h3>
+          </template>
+        <template  #slotInputs>
+        <div>
+          <input type="text" placeholder="Enter your name"/>
+          <input type="password" placeholder="Enter your password"/>
+        </div>
+        </template>
+              <template  #slotActions>
+        <div>
+          <input type="submit" value="submit"/>
+        </div>
+        </template>
+        </mycomp-two>
+        </keep-alive>
+    </div>
+    
+    
+   <button @click="isCompTwo = !isCompTwo">Toggle Data</button>
+</template> 
 
 
 <script>
-import MyComp from '@/components/MyComponent.vue';
 
+import MyComp from '@/components/MyComponent.vue';
+import MycompTwo from "@/components/MyComponent.vue"
 
 
  export default {
   name : "MyMain",
   components: {
-    MyComp
+    MyComp,
+    MycompTwo
   },
   data() {
     return  {
       name: "Ahmed",
+      isCompTwo : false
     }
   },
 
