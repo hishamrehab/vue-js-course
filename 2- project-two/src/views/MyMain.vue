@@ -8,17 +8,22 @@
    <MyContent :students="students" @updateActive="changeActive($event)" :isActive="isActive" />
    <hr />
      <MyContent :students="students" :isActive="isActive" @updateActive="changeActive($event)" />
-  </div>
+  
+    <LifeCycle />
+    </div>
+
 </template>
 
 
 <script>
 import MyContent from '@/components/MyContent.vue';
+import LifeCycle from '@/components/LifeCycle.vue';
 
  export default {
   name : "MyMain",
   components : {
- MyContent,
+    MyContent,
+    LifeCycle
   },
   data() {
     return  {

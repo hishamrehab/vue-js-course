@@ -7,7 +7,7 @@
        </ul>
        <button @click="deleteStudent">Change Ref</button>
        <p>active is : {{ myActive }}</p>
-       <button @click="$event => $emit("updateActive" , false)">Change Prem</button>
+       <button @click="$event => $emit('updateActive' , false)">Change Prem</button>
     </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
      isActve: {
       type: Boolean,
       required: true
-     }
+     } 
   },
    emits: ["updateActive"],
    data() {
@@ -33,7 +33,6 @@ export default {
     deleteStudent() {
         this.students.shift();
     },
-   
   }
 }
 </script>
