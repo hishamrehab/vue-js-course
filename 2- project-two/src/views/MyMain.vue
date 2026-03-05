@@ -5,9 +5,7 @@
     <h2>
       This is  my main page
     </h2>
-    <MyForm />
-    
-
+     <MyForm />
     </div>
 
   </template> 
@@ -17,7 +15,6 @@
 
 
 import MyForm from '@/components/MyForm.vue';
-
 
  export default {
   name : "MyMain",
