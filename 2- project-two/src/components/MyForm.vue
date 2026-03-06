@@ -1,108 +1,131 @@
 <template>
     <div class="my-form">
-        <form action="" @submit.prevent >
+        <form action="" @submit.prevent="addStudent">
          <div>
-            <label for="">First Name</label>
-            <input type="text" v-model="firstName" />
-            <p>Result is {{ student.firstName }}</p>
-         </div>
-    
+            <lable for="firstName">First Name</lable>
+              <input v-model="student.firstName" type="text" name="firstName"/>
+        </div>
 
-           <div>
-            <label for="">Last Name</label>
-            <input type="text" v-model="lastName" />
-             <p>Result is {{ student.lastName }}</p>
-         </div>
+        <div>
+            <lable for="lastName">Last Name</lable>
+              <input type="text" name="lastName" v-model="student.lastName"/>
+        </div>
 
-           <div>
-            <label for="">age</label>
-            <input type="number"  v-model="age" />
-               <p>Result is {{student.age }}</p>
-         </div>
-
-           <div>
-            <label for="">Email</label>
-            <input type="email" />
-                  <p>Result is {{ student.email }}</p>
-         </div>
-
-          <div>
-            <h3>Favorite Sports</h3>
-            <label for="tennis">Tennis</label>
-            <input
-             type="checkbox"
-             name="tennis"
-              id="tennis" 
-              v-model="student.sports.tennis"
-              />
-              <p>{{ student.sports.tennis }}</p>
-            <label for="tennis">Football</label>
-              <input
-              v-model="student.sports.football"
-              type="football" name="football" id="football"/>
-              <p>{{ student.sports.football }}</p>
-         </div>
-
-         <h3>Gender</h3>
-         <div>
-            <label for="male">Male</label>
-            <input  type="submit" style="width: 50%;" v-model="student.gender" value="male"/>
+              <div>
+            <lable for="age">Age</lable>
+              <input type="number" name="age" v-model="student.age" />
+        </div>
+        
+        <div>
+            <h3 for="age">Gender</h3>
+            <label for="Male">Male</label>
+              <input type="radio" name="Male" v-model="student.gender" value="male" />
+             <label for="Female">Female</label>
+              <input type="radio" name="Female" v-model="student.gender" value="female"/>
         </div>
 
             <div>
-            <label for="female">Female</label>
-            <input  type="submit" style="width: 50%;"  v-model="student.gender" value="female"/>
+            <h3 for="age">Favorite Sports</h3>
+            <label for="tennis">Tennis</label>
+            <input v-model="student.sports.tennis" 
+            value="female" type="checkbox" name="tennis"/>
+            <label for="football">Footall</label>
+              <input type="checkbox" name="football"  v-model="student.sports.football"/>
+               <label for="football">Basketball</label>
+              <input type="checkbox" name="basketball" v-model="student.sports.basketball"/>
         </div>
-           {{ student.gender }}
 
-           <div>
-            <label for="bio">
-                Bio
-            </label>
-            <textarea name="bio" id="bio" v-model="student.bio"></textarea>
-           {{ student.bio }}
-        </div>
-         <div class="actions" style="width: 100%;">
-            <input type="submit" value="Submit"  v-model="email"  style="width: 50% ;"/>
-         </div>
-
-         <div>
-            <lable for="grade">Grade</lable>
+        <div>
+            <h3>grade</h3>
             <select v-model="student.grade" name="grade" id="grade">
-                <option value="one">One</option>
-                <option value="two">Two</option>
-                <option value="three">Three</option>
-                <option value="four">Four</option>
+                <option vlaue="one">One</option>
+                <option vlaue="two">Two</option>
+                <option vlaue="Three">Three</option>
             </select>
-           {{ grade }}
         </div>
 
-        </form>
+  <div>
+    <label for="email">Email</label>
+      <input type="text" name="firstName" v-model="student.email"/>
+  </div>       
+  
+  
+   <div>
+    <label for="bio">Bio</label>
+      <textarea name="bio" id="" cols="30" rows="10" v-model="student.bio"></textarea>
+  </div> 
+ 
+   <div style="width: 100%;">
+    <input type="submit" value="save" style="width:50%;"/>
+   </div>
+    </form>
+
+    <div>
+        <ul>
+            <li v-for="(st , i) in students" :key="i" >
+                <p>Name : {{  st.firstName }}{{ st.lastName }}</p>
+                <p>Age :{{ st.age }}</p>
+                <p>Gender : {{ st.gender }}</p>
+                <p>Sports : <strong>
+                    <span v-for="(val , key , i ) in st.sports" :key="i">
+                    <span v-if="val">{{ key }}</span> 
+                        
+                        <br />
+                    </span>
+                </strong></p>
+                <p>Grade : {{ st.grade }}</p>
+                <p>Email : {{ st.email }}</p>
+                <p>Bio : {{ st.bio }}</p>
+            </li>
+        </ul>
+    </div>
+
     </div>
 </template>
 
 
 <script>
+import { S } from 'vue-router/dist/router-CWoNjPRp.mjs';
+
 export  default {
     name : "MyForm",
     data() {
-        return {
-            student: {
-                firstName: "",
-                lastName: "",
-                age: "",
-                email:"",
-                sports: {
-                    tennis: null, 
-                    football:null
-                },
-                gender: "",
-                bio: "",
-                grade: ""
+   return {
+    student: {
+        firstName: "",
+        lastName: "",
+        email: "",
+        sports: {
+            tennis: "",
+            football: "",
+            basketball:""
+        },
+        bio: "",
+        grade: "",
+        gender: ""
+    },
+     students: [],
+ 
+   }
+     },
+     methods: {
+        addStudent() {
+            this.students.push(this.student);
+                this.student= {
+                        firstName: "",
+            lastName: "",
+            email: "",
+            sports: {
+                tennis: "",
+                football: "",
+                basketball:""
             },
+            bio: "",
+            grade: "",
             gender: ""
-        };
-    }
+            }
+        }
+     }
 }
 </script>
 
@@ -113,10 +136,9 @@ export  default {
         display: flex;
         flex-wrap: wrap;
      div {
-        width: 40%;
+        width: 45%;
+        margin-bottom: 20px;
      }
-
-
     }
 }
 </style>
