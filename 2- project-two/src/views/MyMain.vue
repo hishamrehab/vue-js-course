@@ -5,8 +5,10 @@
     <h2>
       This is  my main page
     </h2>
-    <p v-maxSize="10" v-changeColor="'blue'">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ab reprehenderit facere sapiente earum excepturi laboriosam quae dolor mollitia at, fugit impedit architecto tenetur, incidunt tempore error repudiandae eveniet id!</p>
+    <p v-maxSize="10" v-changeColor="'blue'" class="container" v-containerWidth="80">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ab reprehenderit 
+      facere sapiente earum excepturi laboriosam quae dolor mollitia at, fugit impedit 
+      architecto tenetur, incidunt tempore error repudiandae eveniet id!</p>
     <div class="products">
       <ul>
         <li v-for="product in products" :key="product.id">
@@ -67,6 +69,13 @@ import MyForm from '@/components/MyForm.vue';
 
  export default {
   name : "MyMain",
+  directives: {
+      containerWidth(el , order){
+        el.style.maxWidth= order.value + "%";
+        el.style.marginRight ="auto";
+        el.style.marginLeft ="auto";
+      } 
+     },
   components: {
    },
   data() {
