@@ -5,6 +5,8 @@
     <h2>
       This is  my main page
     </h2>
+    <p v-maxSize="10" v-changeColor="'blue'">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque ab reprehenderit facere sapiente earum excepturi laboriosam quae dolor mollitia at, fugit impedit architecto tenetur, incidunt tempore error repudiandae eveniet id!</p>
     <div class="products">
       <ul>
         <li v-for="product in products" :key="product.id">
