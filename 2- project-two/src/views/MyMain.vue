@@ -4,15 +4,23 @@
    >
    <div class="container">
     <h2>this is my main page</h2>
-    <ul>
-      <li v-for="st in students" :key="st.id">
-        <p>Name : {{ st.name }}</p>
-        <p>Age : {{ st.age }}</p>
-      </li>
-    </ul>
+     <h3>My name is {{ fullname }}</h3>
+    <h3>Total Nums is{{  calcNums}}
+
+    </h3>
    </div>
   </div>
-  </template> 
+
+
+  <ul>
+    <input type="search" v-model="search"/>
+  <li v-for="st in getOldSt" :key="st.id">
+    <p>Name : {{ st.name }}</p>
+    <p>Age : {{ st.age }}</p>
+  </li>
+  </ul>
+
+</template> 
 
 <script>
  
@@ -21,7 +29,31 @@
 
  export default {
   name : "MyMain",
-  mixins: [stMixin],  
+  stMixin: [
+    stMixin
+  ],
+  data() {
+    return {
+      firstName: "Ahmed",
+      lastName: "Rehab",
+      myArr: [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10],
+      search: ""
+    }
+  },
+  computed : {
+    fullname() {
+      return `${this.firstName} ${this.lastName}`
+    },
+    calcNums() {
+      return this.myArr.reduce((acc , cur) =>acc + cur);
+    },
+    getOldSt() {
+      return this.students.filter(st => st.age >= 14)
+    },
+    searchSt() {
+      return this.students.filter(st => st.name.match(this.search));
+    }
+  }
  }
 </script>
 
