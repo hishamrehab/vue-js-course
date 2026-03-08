@@ -6,15 +6,12 @@
          </div>
          <div class="links"> 
             <ul>
-               <li>
-                  <router-link to="/">Home</router-link>
-               </li>
-               <li>
-                  <router-link to="/about">About</router-link>
-               </li>
-               <li>
-                  <router-link to="/profile">Profile</router-link>
-               </li>
+                  <li v-for="link in myRoutes" :key="link.name">
+                     <router-link :to="{name: link.name}">
+                    {{ link.meta.title }}
+                     </router-link>
+                  </li>
+               <!-- <router-link :to="{name: 'About' }">About</router-link> -->
             </ul>    
          </div>
             <button class="btns">
@@ -26,13 +23,16 @@
 
 
 <script>
-import router from '@/router';
 
  export default {
     data() {
         return {
             logo: 'My Logo',
+            myRoutes: [],
         }
+    },
+    mounted() {
+      this.myRoutes = this.$router.options.routes;
     }
  }
 </script>

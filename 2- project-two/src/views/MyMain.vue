@@ -1,15 +1,19 @@
 <template>
   <div class="my-main">
-    <h2>this is my main page</h2>
-    <button @click="$event => $route.push({
-      name : "About"
-    })">Click me</button>
+    <h2>This is my main page</h2>
+    <button @click="routerFunc">Click me</button>
 </div>
 </template> 
 <script>
+
  
  export default {
   name : "MyMain",
+  methods: {
+    routerFunc() {
+      this.$router.go(-1);
+    }
+  },
   mounted() {
     console.log(this.$router);
   }

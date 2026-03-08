@@ -10,20 +10,24 @@ const routes = [
     path:"/" , 
     component: MyMain,
     meta: {
-      title: "My About Component",
-      description: "This is a desc for my page",
-      age: 29
+      title: "Home"
     },
   },
   {
     name: "About",
     path: "/about",
-    component: AboutPage
+    component: AboutPage,
+     meta: {
+      title: "About"
+    },
   },
    {
     name: "my_profile",
     path: "/profile",
-    component: PorfilePage
+    component: PorfilePage,
+      meta: {
+      title: "Profile"
+    },
   }
 ];
 
