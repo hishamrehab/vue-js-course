@@ -17,7 +17,7 @@
     }
   },
   mounted() {
-    console.log(this.$router);
+    console.log(this.$router.hasRoute("Home"));
   }
  }
 </script>
