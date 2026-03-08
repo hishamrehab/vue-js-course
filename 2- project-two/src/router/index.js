@@ -1,6 +1,8 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import MyMain from "@/views/MyMain.vue";
 import AboutPage from "@/views/AboutPage.vue"
+import PorfilePage from "@/views/PorfilePage.vue";
+
 
 const routes = [
   {
@@ -17,11 +19,16 @@ const routes = [
     name: "About",
     path: "/about",
     component: AboutPage
+  },
+   {
+    name: "my_profile",
+    path: "/profile",
+    component: PorfilePage
   }
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 
