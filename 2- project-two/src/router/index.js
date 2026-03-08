@@ -1,19 +1,22 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import MyMain from "../views/MyMain.vue";
-import AboutPage from "@/views/AboutPage.vue";
-
+import MyMain from "@/views/MyMain.vue";
+import AboutPage from "@/views/AboutPage.vue"
 
 const routes = [
   {
-    name: "my-main",
-    path: "/test",
+    name: "Home",
+    path:"/" , 
     component: MyMain,
+    meta: {
+      title: "My About Component",
+      description: "This is a desc for my page",
+      age: 29
+    },
   },
-
-    {
-    name: "about_page",
+  {
+    name: "About",
     path: "/about",
-    component: AboutPage,
+    component: AboutPage
   }
 ];
 

@@ -1,6 +1,5 @@
 <template>
 <MyNav />
-<my-nav></my-nav>
 <router-view />
 </template>
 
@@ -37,6 +36,7 @@ nav {
 
     &.router-link-exact-active {
       color: #42b983;
+      font-size: 30px;
     }
   }
 }
