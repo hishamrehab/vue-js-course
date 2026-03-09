@@ -17,8 +17,10 @@
     }
   },
   mounted() {
-    console.log(this.$router.hasRoute("Home"));
-  }
+    if(this.$router.hasRoute(this.$route.name)) {
+      console.log("Route Exists");
+    }
+   }
  }
 </script>
 
