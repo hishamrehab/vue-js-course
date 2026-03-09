@@ -1,15 +1,17 @@
 <template>
     <div class="profile">
         <h2>This is profile page</h2>
+        <h1>{{ $route.params.userid }}</h1>
+        <h2>{{ $route.params.userName }}</h2>
     </div>
 </template>
 
 <script>
 export default {
-    methods: {
-        renderFunc() {
-            this.$route.go(-1);
-        }
+    mounted() {
+        console.log(this.$route)
     }
 }
 </script>
+
+

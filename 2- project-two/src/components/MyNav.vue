@@ -6,11 +6,25 @@
          </div>
          <div class="links"> 
             <ul>
-                  <li v-for="link in myRoutes" :key="link.name">
-                     <router-link :to="{name: link.name}">
+               <li v-for="link in myRoutes" :key="link.name">
+                     <router-link 
+                      v-if="link.name == 'my_profile'"
+                     :to="{name: link.name ,
+                      params: {userIs : 150 , userName="Ahmed Rheba"}}"
+                      >
                     {{ link.meta.title }}
                      </router-link>
-                  </li>
+                 
+                   <router-link 
+                      v-else
+                     :to="{name: link.name}"
+                      >
+                    {{ link.meta.title }}
+                     </router-link>
+
+
+                 
+                  </li> 
                <!-- <router-link :to="{name: 'About' }">About</router-link> -->
             </ul>    
          </div>
