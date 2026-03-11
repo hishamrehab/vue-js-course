@@ -3,20 +3,31 @@
         <h2>This is profile page</h2>
         <h1>{{ $route.params.userid }}</h1>
         <h2>{{ $route.params.userName }}</h2>
+       <hr />
+        <ul 
+            style="list-style: none;
+            display: flex;
+            justify-content: center;
+            gap:20px">
+            <li>
+                <router-link :to="{name:'MyLearnings'}">My Learnings</router-link>
+                <router-link :to="{name:'MyWishlist'}">My Wishlist</router-link>
+            </li>
+        </ul>
         <hr />
-        <h1>{{ $route.params.age }}</h1>
-        <h1>{{ $route.params.grade }}</h1>
-        <h1>{{ $route.params.gender }}</h1>
+        <div class="container">
+            <router-view />
+        </div>
+
+
     </div>
 </template>
 
 <script>
+import router from '@/router';
+
 export default {
-    mounted() {
-        console.log(this.$route.params.userName);
-        console.log(this.$route.query.age);
-        console.log(this.$route.params.userid);
-    }
+   
 }
 </script>
 

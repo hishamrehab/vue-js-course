@@ -6,30 +6,17 @@
          </div>
          <div class="links"> 
             <ul>
-               <li v-for="link in myRoutes" :key="link.name">
+               <li 
+               v-for="link in myRoutes" 
+               :key="link.name"
+               >
                      <router-link 
-                      v-if="link.name == 'my_profile'"
-                     :to="{
-                      name: link.name ,
-                      params: {userIs : 150 , userName:'Ahmed Rheba'},
-                      query: {age : 29 , gender: 'Male', grade: "Fourth-Grade"}
-
-                      }"
+                      v-if="link.name != 'my_profile' && link.name !='not_Found'"
+                     :to="{ name: link.name }"
                       >
                     {{ link.meta.title }}
                      </router-link>
-                 
-                   <router-link 
-                      v-else
-                     :to="{name: link.name}"
-                      >
-                    {{ link.meta.title }}
-                     </router-link>
-
-
-                 
                   </li> 
-               <!-- <router-link :to="{name: 'About' }">About</router-link> -->
             </ul>    
          </div>
             <button class="btns">
