@@ -1,32 +1,43 @@
 <template>
   <div class="my-main">
     <h2>This is my main page</h2>
-    <button @click="getSt">Get Students</button>
-    <ul>
-      <li v-for="st in students" :key="st.id">
-        <p>Id: {{ st.id }}</p>
-        <p>Name: {{ st.Name }}</p>
-        <p>Age: {{ st.age}}</p>
-        <p>Grade: {{ st.grade }}</p>
-        <button @click="$event => toProfile('my_profile' ,
-          st.id, 
-          st.name
-        , st.age 
-        , st.gender
-        )">View Porfile</button>
-      </li>
-    </ul>
+    <h1>Age from parent is {{ age }}</h1>
+    <button @click="$event => age++">Inc Age</button>
+   <ProvideInject  />
 </div>
 </template> 
 <script>
+import ProvideInject from '@/components/ProvideInject.vue';
 
  
  export default {
   name : "MyMain",
+  components: {
+    ProvideInject
+  }, 
   data() {
     return {
       students: [],
+      name :"Ahmed Rehab",
+      age: 29
     }
+  },
+  methods: {
+    satHi() {
+      console.log("Hi");
+    }
+  },
+//  provide for static data
+  //   provide: {
+  //   name: this.name
+  // },
+  // provide for dynamic data
+  provide() {
+      return {
+         name: this.name,
+         age: this.age,
+         myFunction: this.satHi
+      }
   },
   methods: {
     routerFunc() {
